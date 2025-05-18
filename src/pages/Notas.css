@@ -1,0 +1,50 @@
+.notas-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  padding: 0 1rem;
+}
+.notas-page h2 {
+  border-bottom: 3px solid #4b6cb7;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  color: #4b6cb7;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  text-align: left;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 500;
+}
+th {
+  background: #4b6cb7;
+  color: white;
+  font-weight: 600;
+}
+tr:hover {
+  background: #f0f4ff;
+}
+.nota-alta {
+  color: #2e7d32; /* green */
+  font-weight: 700;
+}
+.nota-baja {
+  color: #c62828; /* red */
+  font-weight: 700;
+}
+.sin-notas {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #777;
+  text-align: center;
+}
+
