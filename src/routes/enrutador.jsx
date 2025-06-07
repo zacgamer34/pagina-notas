@@ -1,7 +1,7 @@
 import Home from '../Home'
 import Login from '../pages/Login'
 import NotasPage from '../pages/Notas'
-import ExamPage from '../pages/Examenes'
+import SubjectsPage from '../pages/Examenes'
 
 export let enrutador = [
     {
