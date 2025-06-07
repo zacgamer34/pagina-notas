@@ -1,3 +1,4 @@
+/* --- Estilos ya existentes (no modificados) --- */
 .notas-page {
   max-width: 900px;
   margin: 2rem auto;
@@ -48,3 +49,34 @@ tr:hover {
   text-align: center;
 }
 
+/* --- Nuevos estilos para los botones --- */
+.btn-volver, .btn-editar {
+  padding: 8px 14px;
+  background-color: #4b6cb7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+  margin: 5px;
+}
+
+.btn-volver:hover, .btn-editar:hover {
+  background-color: #3a56a1;
+}
+
+/* --- Estilo para el input editable --- */
+td input[type="number"] {
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  width: 60px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+td input[type="number"]:focus {
+  border-color: #4b6cb7;
+  box-shadow: 0 0 4px rgba(75, 108, 183, 0.6);
+}

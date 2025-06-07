@@ -21,7 +21,7 @@
   align-items: center;
   flex-direction: column;
   padding: 10px;
-  background-color:beige;
+  background-color:blanchedalmond;
 }
 
 .aplicacion__menu-lateral-logo {
@@ -61,7 +61,7 @@
 
 .aplicacion__menu-lateral-navegacion-item {
   text-decoration: none;
-  color: white;
+  color: black;
   letter-spacing: 2px;
   font-weight: 700;
   position: relative;

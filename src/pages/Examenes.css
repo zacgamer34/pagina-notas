@@ -1,0 +1,126 @@
+.exam-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+}
+
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.exam-header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.back-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.back-button:hover {
+  background-color: #2980b9;
+}
+
+.exam-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.exam-input {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  outline-color: #3498db;
+  transition: border-color 0.3s ease;
+}
+.exam-input:focus {
+  border-color: #3498db;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+.error {
+  color: #e74c3c;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.exam-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.no-exams {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.exam-card {
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.exam-name {
+  margin: 0 0 5px 0;
+  color: #34495e;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
