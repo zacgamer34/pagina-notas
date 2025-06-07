@@ -18,8 +18,8 @@ export let enrutador = [
         element: <NotasPage />
     },
 {
-    path: '/examenes',
-    element:<ExamPage />
+    path: '/asignaturas',
+    element:<SubjectsPage />
 }
 
 

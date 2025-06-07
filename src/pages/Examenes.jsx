@@ -1,102 +1,81 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Examenes.css';
+import './Asignaturas.css'; // Asegúrate de renombrar el archivo CSS si cambias su nombre
 
-const ExamPage = () => {
+const SubjectsPage = () => {
   const navigate = useNavigate();
-  const [exams, setExams] = useState([]);
-  const [examName, setExamName] = useState('');
-  const [examScore, setExamScore] = useState('');
-  const [examTotal, setExamTotal] = useState('');
+  const [subjects, setSubjects] = useState([]);
+  const [subjectName, setSubjectName] = useState('');
+  const [teacherName, setTeacherName] = useState('');
   const [error, setError] = useState('');
 
-  const handleAddExam = (e) => {
+  const handleAddSubject = (e) => {
     e.preventDefault();
     setError('');
 
-    if (!examName.trim()) {
-      setError('Por favor, introduce el nombre del examen');
+    if (!subjectName.trim()) {
+      setError('Por favor, introduce el nombre de la asignatura');
       return;
     }
 
-    if (!examScore || !examTotal) {
-      setError('Introduce la calificación y el puntaje total');
+    if (!teacherName.trim()) {
+      setError('Por favor, introduce el nombre del profesor');
       return;
     }
 
-    const scoreNum = Number(examScore);
-    const totalNum = Number(examTotal);
-
-    if (isNaN(scoreNum) || isNaN(totalNum) || scoreNum < 0 || totalNum <= 0 || scoreNum > totalNum) {
-      setError('Calificación inválida o puntaje total inválido');
-      return;
-    }
-
-    const newExam = {
+    const newSubject = {
       id: Date.now(),
-      name: examName,
-      score: scoreNum,
-      total: totalNum,
-      percentage: ((scoreNum / totalNum) * 100).toFixed(2),
+      name: subjectName.trim(),
+      teacher: teacherName.trim(),
     };
 
-    setExams((prev) => [newExam, ...prev]);
-    setExamName('');
-    setExamScore('');
-    setExamTotal('');
+    setSubjects((prev) => [newSubject, ...prev]);
+    setSubjectName('');
+    setTeacherName('');
   };
 
-  const handleDeleteExam = (id) => {
-    setExams((prev) => prev.filter((exam) => exam.id !== id));
+  const handleDeleteSubject = (id) => {
+    setSubjects((prev) => prev.filter((subject) => subject.id !== id));
   };
 
   return (
-    <div className="exam-container">
-      <header className="exam-header">
-        <h1>Gestión de Exámenes</h1>
+    <div className="subject-container">
+      <header className="subject-header">
+        <h1>Gestión de Asignaturas</h1>
         <button className="back-button" onClick={() => navigate(-1)}>Volver</button>
       </header>
 
-      <form onSubmit={handleAddExam} className="exam-form">
+      <form onSubmit={handleAddSubject} className="subject-form">
         <input
           type="text"
-          placeholder="Nombre del examen"
-          value={examName}
-          onChange={(e) => setExamName(e.target.value)}
-          className="exam-input"
+          placeholder="Nombre de la asignatura"
+          value={subjectName}
+          onChange={(e) => setSubjectName(e.target.value)}
+          className="subject-input"
         />
         <input
-          type="number"
-          placeholder="Calificación obtenida"
-          value={examScore}
-          onChange={(e) => setExamScore(e.target.value)}
-          className="exam-input"
-          min="0"
+          type="text"
+          placeholder="Nombre del profesor"
+          value={teacherName}
+          onChange={(e) => setTeacherName(e.target.value)}
+          className="subject-input"
         />
-        <input
-          type="number"
-          placeholder="Puntaje total"
-          value={examTotal}
-          onChange={(e) => setExamTotal(e.target.value)}
-          className="exam-input"
-          min="1"
-        />
-        <button type="submit" className="add-button">Agregar Examen</button>
+        <button type="submit" className="add-button">Agregar Asignatura</button>
       </form>
 
       {error && <p className="error">{error}</p>}
 
-      <div className="exam-list">
-        {exams.length === 0 ? (
-          <p className="no-exams">No hay exámenes cargados.</p>
+      <div className="subject-list">
+        {subjects.length === 0 ? (
+          <p className="no-subjects">No hay asignaturas registradas.</p>
         ) : (
-          exams.map((exam) => (
-            <div key={exam.id} className="exam-card">
+          subjects.map((subject) => (
+            <div key={subject.id} className="subject-card">
               <div>
-                <h3 className="exam-name">{exam.name}</h3>
-                <p>Calificación: {exam.score} / {exam.total} ({exam.percentage}%)</p>
+                <h3 className="subject-name">{subject.name}</h3>
+                <p>Profesor encargado: {subject.teacher}</p>
               </div>
-              <button onClick={() => handleDeleteExam(exam.id)} className="delete-button">Eliminar</button>
+              <button onClick={() => handleDeleteSubject(subject.id)} className="delete-button">Eliminar</button>
             </div>
           ))
         )}
@@ -105,4 +84,4 @@ const ExamPage = () => {
   );
 };
 
-export default ExamPage;
+export default SubjectsPage;

@@ -31,8 +31,8 @@ const MenuLateral = () => {
           Notas
         </Link>
 
-        <Link to="/examenes" className="aplicacion__menu-lateral-navegacion-item">
-          Exámenes
+        <Link to="/asignaturas" className="aplicacion__menu-lateral-navegacion-item">
+          Asignaturas
         </Link>
 
         <button
